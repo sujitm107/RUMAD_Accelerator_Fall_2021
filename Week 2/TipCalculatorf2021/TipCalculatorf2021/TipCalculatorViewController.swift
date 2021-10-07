@@ -12,7 +12,20 @@ class TipCalculatorViewController: UIViewController {
     
     //MARK: - Variables
     //MARK: - IB Outlets
+    
+    @IBOutlet weak var billTotalLabel: UILabel!
+    @IBOutlet weak var tipTotalLabel: UILabel!
+    
+    @IBOutlet weak var tipSegmentControl: UISegmentedControl!
+    @IBOutlet weak var amountTextField: UITextField!
+    
+    
     //MARK: - IB Actions
+    
+    @IBAction func didTapCalculateButton(_ sender: Any) {
+        print("Calculate Button Tapped!")
+        
+    }
     
     
     // MARK: - View LifeCycles
@@ -21,7 +34,9 @@ class TipCalculatorViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    
     }
+    
     
 }
 
