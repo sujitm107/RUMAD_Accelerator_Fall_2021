@@ -9,6 +9,8 @@ import UIKit
 
 class TipCalculatorViewController: UIViewController {
 
+    let tipPercentData: [Double] = [0.10, 0.15, 0.20, 0.25]
+    var tipPercent: Double = 0.10
     
     //MARK: - Variables
     //MARK: - IB Outlets
@@ -24,6 +26,30 @@ class TipCalculatorViewController: UIViewController {
     
     @IBAction func didTapCalculateButton(_ sender: Any) {
         print("Calculate Button Tapped!")
+        
+        if amountTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+            print("invalid entry for amount text field")
+            return
+        }
+        
+        let billString = amountTextField.text!
+        
+        guard let billAmount = Double(billString) else { return }
+        
+        let tipAmount = billAmount * tipPercent
+        let amountTotal = billAmount + tipAmount
+        
+        tipTotalLabel.text = String(format: "$%.2f", tipAmount)
+        billTotalLabel.text = String(format: "$%.2f", amountTotal)
+        
+        view.endEditing(true)
+        
+    }
+    
+    
+    @IBAction func didTapSegmentControl(_ sender: Any) {
+        
+        tipPercent = tipPercentData[tipSegmentControl.selectedSegmentIndex]
         
     }
     
@@ -47,10 +73,6 @@ class TipCalculatorViewController: UIViewController {
 /* 2. Calculate the amount total and tip total using the data we receive from the segment control */
 /* 3. Display our totals in their corresponding labels */
 /* 4. dismissing the keyboard for our own sanity */
-
-
-/* what do we want to do when the user taps "RESET" ??? */
-/* 1. Reset all fields to empty and change the segment and labels to default value/text */
 
 
 /* what do we want to do when the user taps the segment control ??? */
