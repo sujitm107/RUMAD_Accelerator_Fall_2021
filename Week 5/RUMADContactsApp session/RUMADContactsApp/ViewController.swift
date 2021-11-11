@@ -39,41 +39,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBAction func addNameButtonTapped(_ sender: Any) {
         
-        let alert = UIAlertController(title: "New Contact", message: "Add a new name", preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        let alert = UIAlertController(title: "Add New Contact", message: "Enter the name of your friend.", preferredStyle: .alert)
         
         alert.addTextField(configurationHandler: nil)
         
-        alert.addAction(UIAlertAction(title: "Add", style: .default, handler: { (UIAlertAction) in
-            
-            guard let newName = alert.textFields![0].text else { return }
-            
-            if newName.trimmingCharacters(in: .whitespaces) == "" { return }
-            
-            self.addNewName(name: newName)
-            
-            self.contactsTableView.reloadData()
-            
-        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Add", style: .default, handler: nil))
+        
+        
         
         self.present(alert, animated: true, completion: nil)
         
+        
     }
     
-    func addNewName(name: String){
-        //GET LETTER
-        let letter = name.lowercased().first!
-        
-        //GET LIST
-        var list = namesDictionary[letter] == nil ? [] : namesDictionary[letter]!
-        
-        //ADD TO LIST
-        list.append(name)
-        
-        namesDictionary[letter] = list
-        
-    }
+    //add name method
     
     func sortNames() {
         
@@ -95,10 +76,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //Want to get the letter
         let letter = namesDictionary.keys.sorted()[section]
-        
-        //Want to get the list
         let list = namesDictionary[letter]!
         
         return list.count
@@ -107,14 +85,36 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         
+//        let name = getNameAtSectionRow(section: indexPath.section, row: indexPath.row)
+        //letter of the section
         let letter = namesDictionary.keys.sorted()[indexPath.section]
+        
+        //we'll get the list of that section
         let list = namesDictionary[letter]!
         
-        cell.textLabel!.text = list[indexPath.row]
+        //we'll get the name of that section
+        let name = list[indexPath.row]
+        
+        cell.textLabel!.text = name
         
         return cell
         
     }
+    
+//    func getNameAtSectionRow(section: Int, row: Int) -> String{
+//
+//        //letter of the first section
+//        let letter = namesDictionary.keys.sorted()[section] //D
+//
+//        //namesDictionary.keys.sorted() -> list [A, D, J, M, P]
+//
+//        //get the list of the first section
+//        let list = namesDictionary[letter]!
+//
+//        //get the name at the row
+//        return list[row]
+//
+//    }
 // MARK: This is how tableviews are being made behind the scenes
 //    let count = tableview(contactsTableview, numberOfRowsInSection: <Section>) // 5
     

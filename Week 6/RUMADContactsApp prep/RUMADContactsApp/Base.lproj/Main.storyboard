@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Contact View Controller-->
+        <scene sceneID="2uB-C6-MpS">
+            <objects>
+                <viewController id="Pnj-9y-rYo" customClass="AddContactViewController" customModule="RUMADContactsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C68-2Y-rhO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iov-yY-QfE">
+                                <rect key="frame" x="182" y="485" width="50" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Add"/>
+                                <connections>
+                                    <action selector="addContactButtonTapped:" destination="Pnj-9y-rYo" eventType="touchUpInside" id="9et-vj-enS"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Cln-xd-gIt">
+                                <rect key="frame" x="40" y="377" width="334" height="88"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DKC-iK-gA1">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mbP-NU-tLF">
+                                        <rect key="frame" x="0.0" y="54" width="334" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aIE-x9-9IA">
+                                <rect key="frame" x="107" y="77.5" width="200" height="199"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Wfh-U3-gNd"/>
+                                    <constraint firstAttribute="width" constant="200" id="dwv-WU-Rzu"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ReI-ui-0sm" appends="YES" id="ggd-Mv-oPG"/>
+                                    <outletCollection property="gestureRecognizers" destination="ReI-ui-0sm" appends="YES" id="2rB-qf-ISm"/>
+                                    <outletCollection property="gestureRecognizers" destination="ReI-ui-0sm" appends="YES" id="z36-Lu-kKK"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mBN-Ie-cLm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="aIE-x9-9IA" firstAttribute="centerX" secondItem="C68-2Y-rhO" secondAttribute="centerX" id="6id-OO-1Ze"/>
+                            <constraint firstItem="Cln-xd-gIt" firstAttribute="leading" secondItem="mBN-Ie-cLm" secondAttribute="leading" constant="40" id="96V-EG-pif"/>
+                            <constraint firstItem="Cln-xd-gIt" firstAttribute="centerY" secondItem="C68-2Y-rhO" secondAttribute="centerY" id="Lv0-uX-lUd"/>
+                            <constraint firstItem="mBN-Ie-cLm" firstAttribute="trailing" secondItem="Cln-xd-gIt" secondAttribute="trailing" constant="40" id="SAi-xG-W2X"/>
+                            <constraint firstItem="Cln-xd-gIt" firstAttribute="centerX" secondItem="C68-2Y-rhO" secondAttribute="centerX" id="YJs-ji-sO9"/>
+                            <constraint firstItem="Iov-yY-QfE" firstAttribute="centerX" secondItem="C68-2Y-rhO" secondAttribute="centerX" id="dF6-pU-NkS"/>
+                            <constraint firstItem="Cln-xd-gIt" firstAttribute="top" secondItem="aIE-x9-9IA" secondAttribute="bottom" constant="100" id="i9A-8s-m6x"/>
+                            <constraint firstItem="Iov-yY-QfE" firstAttribute="top" secondItem="Cln-xd-gIt" secondAttribute="bottom" constant="20" id="vnQ-a0-o9f"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="NameTextField" destination="DKC-iK-gA1" id="YsV-1b-uFw"/>
+                        <outlet property="phoneNumberTextField" destination="mbP-NU-tLF" id="aw3-vZ-wct"/>
+                        <outlet property="profileImageView" destination="aIE-x9-9IA" id="mZX-aA-pb8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9mk-at-M20" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ReI-ui-0sm">
+                    <connections>
+                        <action selector="tappedProfileImageView:" destination="Pnj-9y-rYo" id="owy-Bt-tTW"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="13" y="-565"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RUMADContactsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PGa-Gd-l0x">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hth-O0-OVW">
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="contactCell" rowHeight="67" id="J1y-VL-YCd" customClass="ContactCell" customModule="RUMADContactsApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="67"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J1y-VL-YCd" id="TOf-q3-3oM">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G2g-XA-U3Y">
+                                                    <rect key="frame" x="20" y="6" width="55" height="55"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="55" id="4dy-PI-4wA"/>
+                                                        <constraint firstAttribute="width" secondItem="G2g-XA-U3Y" secondAttribute="height" multiplier="1:1" id="U47-9X-Osu"/>
+                                                        <constraint firstAttribute="height" constant="55" id="cOQ-VD-8kN"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nsg-NG-iiO">
+                                                    <rect key="frame" x="100" y="23" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="G2g-XA-U3Y" secondAttribute="bottom" constant="6" id="8rH-RI-4MF"/>
+                                                <constraint firstItem="G2g-XA-U3Y" firstAttribute="leading" secondItem="TOf-q3-3oM" secondAttribute="leading" constant="20" symbolic="YES" id="FmY-jL-XEz"/>
+                                                <constraint firstItem="G2g-XA-U3Y" firstAttribute="top" secondItem="TOf-q3-3oM" secondAttribute="top" constant="6" id="Tdp-9y-39S"/>
+                                                <constraint firstItem="G2g-XA-U3Y" firstAttribute="centerY" secondItem="TOf-q3-3oM" secondAttribute="centerY" id="Zvp-p5-aBY"/>
+                                                <constraint firstItem="Nsg-NG-iiO" firstAttribute="centerY" secondItem="G2g-XA-U3Y" secondAttribute="centerY" id="gSY-NX-qt8"/>
+                                                <constraint firstItem="Nsg-NG-iiO" firstAttribute="leading" secondItem="G2g-XA-U3Y" secondAttribute="trailing" constant="25" id="gUU-M1-xga"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="contactImage" destination="G2g-XA-U3Y" id="2ga-Bw-Nbg"/>
+                                            <outlet property="contactName" destination="Nsg-NG-iiO" id="O3z-Qq-dXo"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOw-d2-JLx">
+                                <rect key="frame" x="372.5" y="52" width="21.5" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Pnj-9y-rYo" kind="presentation" identifier="addContactSegue" id="lOZ-sD-NFK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uBN-1p-wFf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uBN-1p-wFf" firstAttribute="trailing" secondItem="hth-O0-OVW" secondAttribute="trailing" id="3cf-gG-Yr1"/>
+                            <constraint firstItem="hth-O0-OVW" firstAttribute="leading" secondItem="uBN-1p-wFf" secondAttribute="leading" id="GuW-Hx-oZP"/>
+                            <constraint firstItem="hth-O0-OVW" firstAttribute="top" secondItem="kOw-d2-JLx" secondAttribute="bottom" constant="5" id="PHU-ew-jpw"/>
+                            <constraint firstItem="uBN-1p-wFf" firstAttribute="bottom" secondItem="hth-O0-OVW" secondAttribute="bottom" id="S3P-gI-opf"/>
+                            <constraint firstItem="uBN-1p-wFf" firstAttribute="trailing" secondItem="kOw-d2-JLx" secondAttribute="trailing" constant="20" id="bHm-27-mWy"/>
+                            <constraint firstItem="hth-O0-OVW" firstAttribute="top" secondItem="uBN-1p-wFf" secondAttribute="top" constant="50" id="w0s-Il-V6o"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contactsTableView" destination="hth-O0-OVW" id="awh-BA-cqR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13.043478260869566" y="88.392857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

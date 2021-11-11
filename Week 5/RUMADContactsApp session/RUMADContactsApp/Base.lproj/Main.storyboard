@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hth-O0-OVW">
-                                <rect key="frame" x="0.0" y="84" width="414" height="778"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="contactCell" id="J1y-VL-YCd">
@@ -30,12 +31,14 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dt0-h3-TBr">
-                                <rect key="frame" x="364" y="46" width="30" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="+"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOw-d2-JLx">
+                                <rect key="frame" x="372.5" y="52" width="21.5" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large"/>
+                                </state>
                                 <connections>
-                                    <action selector="addNameButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aYW-ip-lUb"/>
+                                    <action selector="addNameButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J8t-W6-khq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -43,12 +46,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="uBN-1p-wFf" firstAttribute="trailing" secondItem="hth-O0-OVW" secondAttribute="trailing" id="3cf-gG-Yr1"/>
-                            <constraint firstItem="uBN-1p-wFf" firstAttribute="trailing" secondItem="dt0-h3-TBr" secondAttribute="trailing" constant="20" id="4HM-jx-9zm"/>
                             <constraint firstItem="hth-O0-OVW" firstAttribute="leading" secondItem="uBN-1p-wFf" secondAttribute="leading" id="GuW-Hx-oZP"/>
-                            <constraint firstItem="dt0-h3-TBr" firstAttribute="top" secondItem="uBN-1p-wFf" secondAttribute="top" constant="2" id="QJ1-rJ-yvl"/>
+                            <constraint firstItem="hth-O0-OVW" firstAttribute="top" secondItem="kOw-d2-JLx" secondAttribute="bottom" constant="5" id="PHU-ew-jpw"/>
                             <constraint firstItem="uBN-1p-wFf" firstAttribute="bottom" secondItem="hth-O0-OVW" secondAttribute="bottom" id="S3P-gI-opf"/>
-                            <constraint firstItem="hth-O0-OVW" firstAttribute="top" secondItem="dt0-h3-TBr" secondAttribute="bottom" constant="8" symbolic="YES" id="t26-N0-qN6"/>
-                            <constraint firstItem="hth-O0-OVW" firstAttribute="top" secondItem="uBN-1p-wFf" secondAttribute="top" constant="40" id="w0s-Il-V6o"/>
+                            <constraint firstItem="uBN-1p-wFf" firstAttribute="trailing" secondItem="kOw-d2-JLx" secondAttribute="trailing" constant="20" id="bHm-27-mWy"/>
+                            <constraint firstItem="hth-O0-OVW" firstAttribute="top" secondItem="uBN-1p-wFf" secondAttribute="top" constant="50" id="w0s-Il-V6o"/>
                         </constraints>
                     </view>
                     <connections>
@@ -61,6 +63,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
